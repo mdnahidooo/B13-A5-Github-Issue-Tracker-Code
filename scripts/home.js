@@ -1,1 +1,2 @@
-console.log("Home page connected");
+// console.log("Home page connected");
+

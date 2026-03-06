@@ -12,9 +12,14 @@ document.getElementById("login-btn").addEventListener('click', () => {
 
     if (userName === "admin" && password === "admin123") {
         alert("login success");
+
+        window.location.assign("home.html");
     }
     else {
         alert("login failed");
+
+        inputPassword.value = '';
+        inputPassword.focus();
     }
 
 })
