@@ -1,5 +1,6 @@
 import { fetchIssues } from "./api.js";
 import { createIssues } from "./issues.js";
+import { myModal } from "./modal.js";
 
 const cardSection = document.getElementById("card-section");
 const loadingSpinner = document.getElementById("loading-spinner");
@@ -16,7 +17,6 @@ function hideLoading() {
 
 const loadIssues = async () => {
 
-    
 
     const issues = await fetchIssues();
     const issuesHTML = createIssues(issues);
@@ -24,7 +24,6 @@ const loadIssues = async () => {
     // console.log(issuesHTML);
     // console.log(issues);
 
-    
 };
 
 
@@ -78,4 +77,22 @@ closedTab.addEventListener("click", async () => {
 })
 
 loadIssues();
+
+
+const modal = document.getElementById("details_modal");
+
+cardSection.addEventListener("click", async (e) => {
+    const div = e.target.closest("div[data-id]");
+    const id = div.dataset.id;
+    console.log(id);
+    const issues = await fetchIssues();
+    
+    const issue = issues.find((issue) => issue.id == id);
+
+    const createHTML = myModal(issue);
+
+    modal.innerHTML = createHTML;
+    modal.showModal();
+})
+
 
