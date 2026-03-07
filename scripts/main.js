@@ -86,7 +86,7 @@ cardSection.addEventListener("click", async (e) => {
     const id = div.dataset.id;
     console.log(id);
     const issues = await fetchIssues();
-    
+
     const issue = issues.find((issue) => issue.id == id);
 
     const createHTML = myModal(issue);
@@ -94,5 +94,27 @@ cardSection.addEventListener("click", async (e) => {
     modal.innerHTML = createHTML;
     modal.showModal();
 })
+
+
+
+// for search
+document.getElementById("btn-search").addEventListener("click", async () => {
+
+    const input = document.getElementById("input-search");
+    const searchValue = input.value.trim().toLowerCase();
+    console.log(searchValue);
+
+    const issues = await fetchIssues();
+    console.log(issues);
+
+    const filterIssues = issues.filter((issue) =>
+        issue.title.toLowerCase().includes(searchValue)
+    );
+    // console.log(filterIssues);
+
+    const createSearchSection= createIssues(filterIssues);
+
+    cardSection.innerHTML = createSearchSection;
+});
 
 
