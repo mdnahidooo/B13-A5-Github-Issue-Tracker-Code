@@ -7,6 +7,8 @@ export const createElements = (arr) => {
 export const createIssues = (issues) => {
     console.log(issues);
 
+    const count = document.getElementById("count");
+    count.textContent = issues.length;
 
 
     return issues.map((issue) => {
