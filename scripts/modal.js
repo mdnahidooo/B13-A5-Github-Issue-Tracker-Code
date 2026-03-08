@@ -35,14 +35,14 @@ export const myModal = (issue) => {
                         <p class="text-[#64748B] line-clamp-2 mb-6">${issue.description}</p>
 
 
-                        <div class="flex items-center gap-20">
+                        <div class="flex items-center p-4 gap-40 bg-base-300 rounded-xl">
                             <div>
-                                <p class="text-[#64748B]">Assignee:</p>
-                                <h2 class="font-bold text-l">${issue.assignee}</h2>
+                                <p class="text-[#64748B] mb-2">Assignee:</p>
+                                <h2 class="font-bold text-l">${issue.assignee ? issue.assignee : "Not Found"}</h2>
                             </div>
 
                             <div>
-                                <p class="text-[#64748B]">Priority:</p>
+                                <p class="text-[#64748B] mb-2">Priority:</p>
                                 <div class="badge  rounded-2xl ${riskLevel}">${issue.priority}</div>
                             </div>
                         </div>

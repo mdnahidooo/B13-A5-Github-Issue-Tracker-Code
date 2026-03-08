@@ -27,7 +27,7 @@
 <br>
 
 <h2>5️⃣ What are template literals?</h2>
-<p>`Template literals use backticks instead of quotes and it's allow string interpolation means we can embed variables, expressions. It's also allows multiline strings. It enhance code readability and flexibility.</p>
+<p>`Template literals use backticks instead of quotes and it's allow string interpolation means we can embed variables, expressions. It's also allows multiline strings. It enhance code readability and flexibility.`</p>
 
 <br>
 <br>
