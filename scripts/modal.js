@@ -9,15 +9,15 @@ export const myModal = (issue) => {
 
 
     const statusLevel = issue.status === "open"
-            ? "bg-green-500 text-white"
-            : "bg-red-500 text-white";
-    
+        ? "bg-green-500 text-white"
+        : "bg-red-500 text-white";
+
     const riskLevel =
-            issue.priority === "high"
-                ? "bg-red-500 text-white"
-                : issue.priority === "medium"
-                    ? "bg-yellow-500 text-white"
-                    : "bg-blue-500 text-white";
+        issue.priority === "high"
+            ? "bg-red-500 text-white"
+            : issue.priority === "medium"
+                ? "bg-yellow-500 text-white"
+                : "bg-blue-500 text-white";
 
     return `
   <div class="modal-box">
@@ -25,9 +25,16 @@ export const myModal = (issue) => {
 
                     <div>
                         <h2 class="font-bold text-xl line-clamp-1 mb-2">${issue.title}</h2>
-                        <div class="flex items-center">
-                            <button class="badge rounded-xl  ${statusLevel}">${issue.status}</button>
-                            <p class="text-[#64748B]"> Opened by <span>${issue.assignee} </span> <span>${issue.updatedAt.split("T")[0]}</span></p>
+                        <div class="flex items-center gap-2">
+                            <button class="badge rounded-xl  ${statusLevel}">${issue.status}</button> 
+                            
+                            <span class="w-1 h-1 rounded-full bg-[#64748B]"></span> 
+                            <p class="text-[#64748B]"> Opened by <span>${issue.author} </span> </p>
+                            
+                            
+                            <span class="w-1 h-1 rounded-full bg-[#64748B]"></span> 
+                            <p class="text-[#64748B]">  <span>${issue.updatedAt.split("T")[0]}</span></p>
+                             
                         </div>
 
                         <div class="my-4"> ${createElements(issue.labels)}</div>
