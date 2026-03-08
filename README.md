@@ -21,7 +21,13 @@
 <br>
 
 <h2>4️⃣ What is an arrow function?</h2>
-<p>Arrow functions is a special characteristics of ES6. like when we want to store and use for callback, array methods also when we need argument.</p>
+<p>Arrow functions is a special characteristics of ES6. Allow functions allow a shorter syntax for function expressions where we can skip function keyword, return keyword and also curly brackets. We use arrow function when we want to store and use for callback, array methods also when we need argument.</p>
+
+<br>
+<br>
+
+<h2>5️⃣ What are template literals?</h2>
+<p>`Template literals use backticks instead of quotes and it's allow string interpolation means we can embed variables, expressions. It's also allows multiline strings. It enhance code readability and flexibility.</p>
 
 <br>
 <br>
